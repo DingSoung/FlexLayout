@@ -34,8 +34,16 @@ layout2.aspectRatio = 1
 layout2.width = 20%
 layout2.margin = 8
 
-layout.set(children: [layout2])
+let layout3 = FlexLayout()
+layout3.set(layout: [
+		"aspect-ratio": "1",
+		"width": "50%",
+		"margin": "8"
+     ]
+)
+
+layout.set(children: [layout2, layout3])
 _ = layout.intrinsicSize
-print(layout.frame, layout.frame)
+print(layout.frame, layout2.frame, layout3.frame)
 ```
 
