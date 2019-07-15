@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Extension",
+        "repositoryURL": "https://github.com/DingSoung/Extension",
+        "state": {
+          "branch": "master",
+          "revision": "1c3585d641ca93f4bfd3236edcc53ec3df9077b7",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
