@@ -111,13 +111,9 @@ extension FlexLayout {
 
 // MARK: - layout access
 extension FlexLayout {
-    public final var intrinsicSize: CGSize {
-        return self.calculateLayout(size: CGSize(width: YGValue.undefined.value,
-                                                 height: YGValue.undefined.value))
-    }
-
     @discardableResult
-    public final func calculateLayout(size: CGSize) -> CGSize {
+    public final func calculateLayout(size: CGSize = CGSize(width: YGValue.undefined.value,
+                                                            height: YGValue.undefined.value)) -> CGSize {
         let node = self.yoga.node!
         YGNodeCalculateLayout(node,
                               Float(size.width),
