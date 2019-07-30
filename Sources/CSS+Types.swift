@@ -120,48 +120,48 @@ extension CSS.Display: ExpressibleByStringLiteral {
 // MARK: - dynamic setValue support
 extension CSS.Direction {
     var nsValue: NSNumber {
-        return NSNumber(value: self.rawValue)
+        return NSNumber(value: rawValue)
     }
 }
 
 extension CSS.FlexDirection {
     var nsValue: NSNumber {
-        return NSNumber(value: self.rawValue)
+        return NSNumber(value: rawValue)
     }
 }
 
 extension CSS.Justify {
     var nsValue: NSNumber {
-        return NSNumber(value: self.rawValue)
+        return NSNumber(value: rawValue)
     }
 }
 
 extension CSS.Align {
     var nsValue: NSNumber {
-        return NSNumber(value: self.rawValue)
+        return NSNumber(value: rawValue)
     }
 }
 
 extension CSS.Position {
     var nsValue: NSNumber {
-        return NSNumber(value: self.rawValue)
+        return NSNumber(value: rawValue)
     }
 }
 
 extension CSS.Wrap {
     var nsValue: NSNumber {
-        return NSNumber(value: self.rawValue)
+        return NSNumber(value: rawValue)
     }
 }
 
 extension CSS.Overflow {
     var nsValue: NSNumber {
-        return NSNumber(value: self.rawValue)
+        return NSNumber(value: rawValue)
     }
 }
 
 extension CSS.Display {
     var nsValue: NSNumber {
-        return NSNumber(value: self.rawValue)
+        return NSNumber(value: rawValue)
     }
 }

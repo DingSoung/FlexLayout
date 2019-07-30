@@ -30,14 +30,14 @@ extension FlexLayout {
     @discardableResult
     public final func set(children: [FlexLayout]) -> Self {
         self.children = children
-        if self.isLeaf {
+        if isLeaf {
         } else {
-            YGNodeSetMeasureFunc(self.yoga.node, nil)
+            YGNodeSetMeasureFunc(yoga.node, nil)
             let children = children.filter({ $0.yoga.isEnabled && $0.yoga.isIncludedInLayout })
-            if !FlexLayout.nodeHasExactSameChildren(node: self.yoga.node, children: children) {
-                YGNodeRemoveAllChildren(self.yoga.node)
+            if !FlexLayout.nodeHasExactSameChildren(node: yoga.node, children: children) {
+                YGNodeRemoveAllChildren(yoga.node)
                 for index in 0..<children.count {
-                    YGNodeInsertChild(self.yoga.node, children[index].yoga.node, UInt32(index))
+                    YGNodeInsertChild(yoga.node, children[index].yoga.node, UInt32(index))
                 }
             }
         }
@@ -46,12 +46,12 @@ extension FlexLayout {
 
     @discardableResult
     public final func set(sizeThatFits: @escaping (CGSize) -> CGSize) -> Self {
-        if self.isLeaf {
-            self.context = Context(sizeThatFits: sizeThatFits)
-            YGNodeSetContext(self.yoga.node, UnsafeMutableRawPointer(&self.context))
-            YGNodeSetMeasureFunc(self.yoga.node, FlexLayout.measureFunc)
+        if isLeaf {
+            context = Context(sizeThatFits: sizeThatFits)
+            YGNodeSetContext(yoga.node, UnsafeMutableRawPointer(&context))
+            YGNodeSetMeasureFunc(yoga.node, FlexLayout.measureFunc)
         } else {
-            YGNodeSetMeasureFunc(self.yoga.node, nil)
+            YGNodeSetMeasureFunc(yoga.node, nil)
         }
         return self
     }
@@ -59,8 +59,8 @@ extension FlexLayout {
 
 extension FlexLayout {
     private var isLeaf: Bool {
-        if self.yoga.isEnabled
-            && self.children.first(where: { $0.yoga.isEnabled && $0.yoga.isIncludedInLayout }) != nil {
+        if yoga.isEnabled
+            && children.first(where: { $0.yoga.isEnabled && $0.yoga.isIncludedInLayout }) != nil {
             return false
         }
         return true
@@ -114,7 +114,7 @@ extension FlexLayout {
     @discardableResult
     public final func calculateLayout(size: CGSize = CGSize(width: YGValue.undefined.value,
                                                             height: YGValue.undefined.value)) -> CGSize {
-        let node = self.yoga.node!
+        let node = yoga.node!
         YGNodeCalculateLayout(node,
                               Float(size.width),
                               Float(size.height),
@@ -130,7 +130,7 @@ extension FlexLayout {
     }
 
     public var frame: CGRect {
-        let node = self.yoga.node
+        let node = yoga.node
         let frame = CGRect(x: YGNodeLayoutGetLeft(node),
                            y: YGNodeLayoutGetTop(node),
                            width: YGNodeLayoutGetWidth(node),
@@ -148,170 +148,170 @@ extension FlexLayout {
 // MARK: - programming config
 extension FlexLayout {
     public final var direction: CSS.Direction {
-        set { self.yoga.direction = newValue } get { return self.yoga.direction }
+        set { yoga.direction = newValue } get { return yoga.direction }
     }
     public final var flexDirection: CSS.FlexDirection {
-        set { self.yoga.flexDirection = newValue } get { return self.yoga.flexDirection }
+        set { yoga.flexDirection = newValue } get { return yoga.flexDirection }
     }
     public final var justifyContent: CSS.Justify {
-        set { self.yoga.justifyContent = newValue } get { return self.yoga.justifyContent }
+        set { yoga.justifyContent = newValue } get { return yoga.justifyContent }
     }
     public final var alignContent: CSS.Align {
-        set { self.yoga.alignContent = newValue } get { return self.yoga.alignContent }
+        set { yoga.alignContent = newValue } get { return yoga.alignContent }
     }
     public final var alignItems: CSS.Align {
-        set { self.yoga.alignItems = newValue } get { return self.yoga.alignItems }
+        set { yoga.alignItems = newValue } get { return yoga.alignItems }
     }
     public final var alignSelf: CSS.Align {
-        set { self.yoga.alignSelf = newValue } get { return self.yoga.alignSelf }
+        set { yoga.alignSelf = newValue } get { return yoga.alignSelf }
     }
     public final var position: CSS.Position {
-        set { self.yoga.position = newValue } get { return self.yoga.position }
+        set { yoga.position = newValue } get { return yoga.position }
     }
     public final var flexWrap: CSS.Wrap {
-        set { self.yoga.flexWrap = newValue } get { return self.yoga.flexWrap }
+        set { yoga.flexWrap = newValue } get { return yoga.flexWrap }
     }
     public final var overflow: CSS.Overflow {
-        set { self.yoga.overflow = newValue } get { return self.yoga.overflow }
+        set { yoga.overflow = newValue } get { return yoga.overflow }
     }
     public final var display: CSS.Display {
-        set { self.yoga.display = newValue } get { return self.yoga.display }
+        set { yoga.display = newValue } get { return yoga.display }
     }
 
     public final var flex: CGFloat {
-        set { self.yoga.flex = newValue } get { return self.yoga.flex }
+        set { yoga.flex = newValue } get { return yoga.flex }
     }
     public final var flexGrow: CGFloat {
-        set { self.yoga.flexGrow = newValue } get { return self.yoga.flexGrow }
+        set { yoga.flexGrow = newValue } get { return yoga.flexGrow }
     }
     public final var flexShrink: CGFloat {
-        set { self.yoga.flexShrink = newValue } get { return self.yoga.flexShrink }
+        set { yoga.flexShrink = newValue } get { return yoga.flexShrink }
     }
     public final var flexBasis: CSS.Value {
-        set { self.yoga.flexBasis = newValue } get { return self.yoga.flexBasis }
+        set { yoga.flexBasis = newValue } get { return yoga.flexBasis }
     }
 
     public final var left: CSS.Value {
-        set { self.yoga.left = newValue } get { return self.yoga.left }
+        set { yoga.left = newValue } get { return yoga.left }
     }
     public final var top: CSS.Value {
-        set { self.yoga.top = newValue } get { return self.yoga.top }
+        set { yoga.top = newValue } get { return yoga.top }
     }
     public final var right: CSS.Value {
-        set { self.yoga.right = newValue } get { return self.yoga.right }
+        set { yoga.right = newValue } get { return yoga.right }
     }
     public final var bottom: CSS.Value {
-        set { self.yoga.bottom = newValue } get { return self.yoga.bottom }
+        set { yoga.bottom = newValue } get { return yoga.bottom }
     }
     public final var start: CSS.Value {
-        set { self.yoga.start = newValue } get { return self.yoga.start }
+        set { yoga.start = newValue } get { return yoga.start }
     }
     public final var end: CSS.Value {
-        set { self.yoga.end = newValue } get { return self.yoga.end }
+        set { yoga.end = newValue } get { return yoga.end }
     }
 
     public final var marginLeft: CSS.Value {
-        set { self.yoga.marginLeft = newValue } get { return self.yoga.marginLeft }
+        set { yoga.marginLeft = newValue } get { return yoga.marginLeft }
     }
     public final var marginTop: CSS.Value {
-        set { self.yoga.marginTop = newValue } get { return self.yoga.marginTop }
+        set { yoga.marginTop = newValue } get { return yoga.marginTop }
     }
     public final var marginRight: CSS.Value {
-        set { self.yoga.marginRight = newValue } get { return self.yoga.marginRight }
+        set { yoga.marginRight = newValue } get { return yoga.marginRight }
     }
     public final var marginBottom: CSS.Value {
-        set { self.yoga.marginBottom = newValue } get { return self.yoga.marginBottom }
+        set { yoga.marginBottom = newValue } get { return yoga.marginBottom }
     }
     public final var marginStart: CSS.Value {
-        set { self.yoga.marginStart = newValue } get { return self.yoga.marginStart }
+        set { yoga.marginStart = newValue } get { return yoga.marginStart }
     }
     public final var marginEnd: CSS.Value {
-        set { self.yoga.marginEnd = newValue } get { return self.yoga.marginEnd }
+        set { yoga.marginEnd = newValue } get { return yoga.marginEnd }
     }
     public final var marginHorizontal: CSS.Value {
-        set { self.yoga.marginHorizontal = newValue } get { return self.yoga.marginHorizontal }
+        set { yoga.marginHorizontal = newValue } get { return yoga.marginHorizontal }
     }
     public final var marginVertical: CSS.Value {
-        set { self.yoga.marginVertical = newValue } get { return self.yoga.marginVertical }
+        set { yoga.marginVertical = newValue } get { return yoga.marginVertical }
     }
     public final var margin: CSS.Value {
-        set { self.yoga.margin = newValue } get { return self.yoga.margin }
+        set { yoga.margin = newValue } get { return yoga.margin }
     }
 
     public final var paddingLeft: CSS.Value {
-        set { self.yoga.paddingLeft = newValue } get { return self.yoga.paddingLeft }
+        set { yoga.paddingLeft = newValue } get { return yoga.paddingLeft }
     }
     public final var paddingTop: CSS.Value {
-        set { self.yoga.paddingTop = newValue } get { return self.yoga.paddingTop }
+        set { yoga.paddingTop = newValue } get { return yoga.paddingTop }
     }
     public final var paddingRight: CSS.Value {
-        set { self.yoga.paddingRight = newValue } get { return self.yoga.paddingRight }
+        set { yoga.paddingRight = newValue } get { return yoga.paddingRight }
     }
     public final var paddingBottom: CSS.Value {
-        set { self.yoga.paddingBottom = newValue } get { return self.yoga.paddingBottom }
+        set { yoga.paddingBottom = newValue } get { return yoga.paddingBottom }
     }
     public final var paddingStart: CSS.Value {
-        set { self.yoga.paddingStart = newValue } get { return self.yoga.paddingStart }
+        set { yoga.paddingStart = newValue } get { return yoga.paddingStart }
     }
     public final var paddingEnd: CSS.Value {
-        set { self.yoga.paddingEnd = newValue } get { return self.yoga.paddingEnd }
+        set { yoga.paddingEnd = newValue } get { return yoga.paddingEnd }
     }
     public final var paddingHorizontal: CSS.Value {
-        set { self.yoga.paddingHorizontal = newValue } get { return self.yoga.paddingHorizontal }
+        set { yoga.paddingHorizontal = newValue } get { return yoga.paddingHorizontal }
     }
     public final var paddingVertical: CSS.Value {
-        set { self.yoga.paddingVertical = newValue } get { return self.yoga.paddingVertical }
+        set { yoga.paddingVertical = newValue } get { return yoga.paddingVertical }
     }
     public final var padding: CSS.Value {
-        set { self.yoga.padding = newValue } get { return self.yoga.padding }
+        set { yoga.padding = newValue } get { return yoga.padding }
     }
 
     public final var borderLeftWidth: CGFloat {
-        set { self.yoga.borderLeftWidth = newValue } get { return self.yoga.borderLeftWidth }
+        set { yoga.borderLeftWidth = newValue } get { return yoga.borderLeftWidth }
     }
     public final var borderTopWidth: CGFloat {
-        set { self.yoga.borderTopWidth = newValue } get { return self.yoga.borderTopWidth }
+        set { yoga.borderTopWidth = newValue } get { return yoga.borderTopWidth }
     }
     public final var borderRightWidth: CGFloat {
-        set { self.yoga.borderRightWidth = newValue } get { return self.yoga.borderRightWidth }
+        set { yoga.borderRightWidth = newValue } get { return yoga.borderRightWidth }
     }
     public final var borderBottomWidth: CGFloat {
-        set { self.yoga.borderBottomWidth = newValue } get { return self.yoga.borderBottomWidth }
+        set { yoga.borderBottomWidth = newValue } get { return yoga.borderBottomWidth }
     }
     public final var borderStartWidth: CGFloat {
-        set { self.yoga.borderStartWidth = newValue } get { return self.yoga.borderStartWidth }
+        set { yoga.borderStartWidth = newValue } get { return yoga.borderStartWidth }
     }
     public final var borderEndWidth: CGFloat {
-        set { self.yoga.borderEndWidth = newValue } get { return self.yoga.borderEndWidth }
+        set { yoga.borderEndWidth = newValue } get { return yoga.borderEndWidth }
     }
     public final var borderWidth: CGFloat {
-        set { self.yoga.borderWidth = newValue } get { return self.yoga.borderWidth }
+        set { yoga.borderWidth = newValue } get { return yoga.borderWidth }
     }
 
     public final var width: CSS.Value {
-        set { self.yoga.width = newValue } get { return self.yoga.width }
+        set { yoga.width = newValue } get { return yoga.width }
     }
     public final var height: CSS.Value {
-        set { self.yoga.height = newValue } get { return self.yoga.height }
+        set { yoga.height = newValue } get { return yoga.height }
     }
     public final var minWidth: CSS.Value {
-        set { self.yoga.minWidth = newValue } get { return self.yoga.minWidth }
+        set { yoga.minWidth = newValue } get { return yoga.minWidth }
     }
     public final var minHeight: CSS.Value {
-        set { self.yoga.minHeight = newValue } get { return self.yoga.minHeight }
+        set { yoga.minHeight = newValue } get { return yoga.minHeight }
     }
     public final var maxWidth: CSS.Value {
-        set { self.yoga.maxWidth = newValue } get { return self.yoga.maxWidth }
+        set { yoga.maxWidth = newValue } get { return yoga.maxWidth }
     }
     public final var maxHeight: CSS.Value {
-        set { self.yoga.maxHeight = newValue } get { return self.yoga.maxHeight }
+        set { yoga.maxHeight = newValue } get { return yoga.maxHeight }
     }
 
     public final var aspectRatio: CGFloat {
-        set { self.yoga.aspectRatio = newValue } get { return self.yoga.aspectRatio }
+        set { yoga.aspectRatio = newValue } get { return yoga.aspectRatio }
     }
     public final var resolvedDirection: CSS.Direction {
-        return self.yoga.resolvedDirection
+        return yoga.resolvedDirection
     }
 }
 
@@ -322,7 +322,7 @@ extension FlexLayout {
         layout.forEach { (pair) in
             if let keyPhraser = CSS.keyParaserMap[pair.key] {
                 if let value = keyPhraser.phrase(pair.value) {
-                    self.yoga.setValue(value, forKey: keyPhraser.key)
+                    yoga.setValue(value, forKey: keyPhraser.key)
                 } else {
                     error("can not phrase style:", pair)
                 }
