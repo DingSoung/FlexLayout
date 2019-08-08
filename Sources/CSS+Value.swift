@@ -57,7 +57,8 @@ extension CSS.Value {
 // MARK: kvo support
 extension CSS.Value {
     public var nsValue: NSValue {
-        return NSValue.valuewithYGValue(self)
+        //return NSValue.valuewithYGValue(self)
+        return NSValue()
     }
 }
 
@@ -74,10 +75,16 @@ extension Float {
     public static postfix func % (value: Float) -> CSS.Value {
         return CSS.Value(value: value, unit: .percent)
     }
+    var cgFloat: CGFloat {
+        return CGFloat(self)
+    }
 }
 
 extension CGFloat {
     public static postfix func % (value: CGFloat) -> CSS.Value {
         return CSS.Value(value: Float(value), unit: .percent)
+    }
+    var float: Float {
+        return Float(self)
     }
 }

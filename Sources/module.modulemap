@@ -1,0 +1,10 @@
+framework module FlexLayout {
+    umbrella header "FlexLayout.h"
+     private header "YGValue.h"
+     private header "YGEnums.h"
+     private header "Yoga.h"
+     private header "YGMacros.h"
+
+     //private header "Layout.h"
+     private header "NSValue+YGValue.h"
+}

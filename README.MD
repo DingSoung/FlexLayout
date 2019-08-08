@@ -11,10 +11,10 @@ A CSS Flex Layout for iOS
 
 # Install
 
-carthage
+SPM
 
 ```swift
-github DingSoung/Extension.git master
+https://github.com/DingSoung/FlexLayout master
 ```
 
 # Usage

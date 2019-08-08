@@ -12,7 +12,7 @@
 #import "Yoga.h"
 #import "YGMacros.h"
 
-@interface YGLayout : NSObject
+@interface Layout : NSObject
 
 @property (nonatomic, assign, readonly) YGNodeRef node;
 

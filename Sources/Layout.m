@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#import "YGLayout.h"
-#import <yoga/Yoga.h>
+#import "Layout.h"
+#import "Yoga.h"
 #import <UIKit/UIKit.h>
 
 #define YG_PROPERTY(type, lowercased_name, capitalized_name)    \
@@ -117,11 +117,11 @@ YG_VALUE_EDGE_PROPERTY(lowercased_name, capitalized_name, capitalized_name, YGEd
 
 static YGConfigRef globalConfig;
 
-@interface YGLayout ()
+@interface Layout ()
 
 @end
 
-@implementation YGLayout
+@implementation Layout
 
 @synthesize isEnabled=_isEnabled;
 @synthesize isIncludedInLayout=_isIncludedInLayout;
