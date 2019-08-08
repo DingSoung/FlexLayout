@@ -131,17 +131,10 @@ extension FlexLayout {
 
     public var frame: CGRect {
         let node = yoga.node
-        let frame = CGRect(x: YGNodeLayoutGetLeft(node),
-                           y: YGNodeLayoutGetTop(node),
-                           width: YGNodeLayoutGetWidth(node),
-                           height: YGNodeLayoutGetHeight(node))
-        let topLeft = frame.origin
-        let buttomRight = CGPoint(x: frame.maxX, y: frame.maxY)
-        return CGRect(x: roundPixel(topLeft.x),
-                      y: roundPixel(topLeft.y),
-                      width: roundPixel(buttomRight.x) - roundPixel(topLeft.x),
-                      height: roundPixel(buttomRight.y) - roundPixel(topLeft.y)
-        )
+        return CGRect(x: YGNodeLayoutGetLeft(node),
+                      y: YGNodeLayoutGetTop(node),
+                      width: YGNodeLayoutGetWidth(node),
+                      height: YGNodeLayoutGetHeight(node))
     }
 }
 

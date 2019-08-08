@@ -8,8 +8,11 @@ public struct CSS {
 }
 
 extension CSS {
+    @inline(__always)
     private static let cssAlignPhraser: (String) -> NSValue? = { CSS.Align(stringLiteral: $0).nsValue }
+    @inline(__always)
     private static let floatPhraser: (String) -> Float? = { Float($0) }
+    @inline(__always)
     private static let cssValuePhraser: (String) -> NSValue? = { CSS.Value(stringLiteral: $0).nsValue }
 
     static var keyParaserMap: [String: (key: String, phrase: (String) -> Any?)] = [
@@ -68,7 +71,7 @@ extension CSS {
         "min-height": ("minHeight", cssValuePhraser),
         "max-width": ("maxWidth", cssValuePhraser),
         "max-height": ("maxHeight", cssValuePhraser),
-        
+
         "aspect-ratio": ("aspectRatio", floatPhraser)
     ]
 }
