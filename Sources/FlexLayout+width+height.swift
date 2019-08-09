@@ -1,7 +1,6 @@
 //  Created by Songwen Ding on 2019/4/16.
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
-import CoreGraphics
 import Extension
 
 extension FlexLayout {
@@ -105,9 +104,8 @@ extension FlexLayout {
 }
 
 extension FlexLayout {
-    
-    public final var aspectRatio: CGFloat {
-        set { YGNodeStyleSetAspectRatio(node, newValue.float) }
-        get { return YGNodeStyleGetAspectRatio(node).cgFloat }
+    public final var aspectRatio: Float {
+        set { YGNodeStyleSetAspectRatio(node, newValue) }
+        get { return YGNodeStyleGetAspectRatio(node) }
     }
 }

@@ -4,7 +4,4 @@ framework module FlexLayout {
      private header "YGEnums.h"
      private header "Yoga.h"
      private header "YGMacros.h"
-
-     //private header "Layout.h"
-     private header "NSValue+YGValue.h"
 }

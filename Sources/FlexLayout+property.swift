@@ -1,7 +1,6 @@
 //  Created by Songwen Ding on 2019/4/16.
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
-import CoreGraphics
 import Extension
 
 // MARK: - basic properties
@@ -50,17 +49,17 @@ extension FlexLayout {
 
 // MARK: - Flex Properties
 extension FlexLayout {
-    public final var flex: CGFloat {
-        set { YGNodeStyleSetFlex(node, newValue.float) }
-        get { return YGNodeStyleGetFlex(node).cgFloat }
+    public final var flex: Float {
+        set { YGNodeStyleSetFlex(node, newValue) }
+        get { return YGNodeStyleGetFlex(node) }
     }
-    public final var flexGrow: CGFloat {
-        set { YGNodeStyleSetFlexGrow(node, newValue.float) }
-        get { return YGNodeStyleGetFlexGrow(node).cgFloat }
+    public final var flexGrow: Float {
+        set { YGNodeStyleSetFlexGrow(node, newValue) }
+        get { return YGNodeStyleGetFlexGrow(node) }
     }
-    public final var flexShrink: CGFloat {
-         set { YGNodeStyleSetFlexShrink(node, newValue.float) }
-        get { return YGNodeStyleGetFlexShrink(node).cgFloat }
+    public final var flexShrink: Float {
+         set { YGNodeStyleSetFlexShrink(node, newValue) }
+        get { return YGNodeStyleGetFlexShrink(node) }
     }
     public final var flexBasis: CSS.Value {
         set {

@@ -1,7 +1,6 @@
 //  Created by Songwen Ding on 2019/4/16.
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
-import CoreGraphics
 import Extension
 
 extension FlexLayout {
@@ -18,12 +17,40 @@ extension FlexLayout {
             fatalError()
         }
     }
+    @inline(__always)
+    private func setMargin(_ value: CSS.Value, _ edge: YGEdge) {
+        switch value.unit {
+        case .undefined, .point:
+            YGNodeStyleSetMargin(node, edge, value.value)
+        case .percent:
+            YGNodeStyleSetMarginPercent(node, edge, value.value)
+        case .auto:
+            error("not implemented")
+        @unknown default:
+            fatalError()
+        }
+    }
+    @inline(__always)
+    private func setPadding(_ value: CSS.Value, _ edge: YGEdge) {
+        switch value.unit {
+        case .undefined, .point:
+            YGNodeStyleSetPadding(node, edge, value.value)
+        case .percent:
+            YGNodeStyleSetPaddingPercent(node, edge, value.value)
+        case .auto:
+            error("not implemented")
+        @unknown default:
+            fatalError()
+        }
+    }
+}
 
+// MARK: - position
+extension FlexLayout {
     public final var left: CSS.Value {
         set { setPosition(newValue, .left) }
         get { return YGNodeStyleGetPosition(node, .left) }
     }
-
     public final var top: CSS.Value {
         set { setPosition(newValue, .top) }
         get { return YGNodeStyleGetPosition(node, .top) }
@@ -46,21 +73,8 @@ extension FlexLayout {
     }
 }
 
+// MARK: - margin
 extension FlexLayout {
-    @inline(__always)
-    private func setMargin(_ value: CSS.Value, _ edge: YGEdge) {
-        switch value.unit {
-        case .undefined, .point:
-            YGNodeStyleSetMargin(node, edge, value.value)
-        case .percent:
-            YGNodeStyleSetMarginPercent(node, edge, value.value)
-        case .auto:
-            error("not implemented")
-        @unknown default:
-            fatalError()
-        }
-    }
-
     public final var marginLeft: CSS.Value {
         set { setMargin(newValue, .left) }
         get { return YGNodeStyleGetMargin(node, .left) }
@@ -99,21 +113,8 @@ extension FlexLayout {
     }
 }
 
+// MARK: - padding
 extension FlexLayout {
-    @inline(__always)
-    private func setPadding(_ value: CSS.Value, _ edge: YGEdge) {
-        switch value.unit {
-        case .undefined, .point:
-            YGNodeStyleSetPadding(node, edge, value.value)
-        case .percent:
-            YGNodeStyleSetPaddingPercent(node, edge, value.value)
-        case .auto:
-            error("not implemented")
-        @unknown default:
-            fatalError()
-        }
-    }
-
     public final var paddingLeft: CSS.Value {
         set { setPadding(newValue, .left) }
         get { return YGNodeStyleGetPadding(node, .left) }
@@ -152,33 +153,34 @@ extension FlexLayout {
     }
 }
 
+// MARK: - border
 extension FlexLayout {
-    public final var borderLeftWidth: CGFloat {
-        set { YGNodeStyleSetBorder(node, .left, newValue.float) }
-        get { return YGNodeStyleGetBorder(node, .left).cgFloat }
+    public final var borderLeftWidth: Float {
+        set { YGNodeStyleSetBorder(node, .left, newValue) }
+        get { return YGNodeStyleGetBorder(node, .left) }
     }
-    public final var borderTopWidth: CGFloat {
-        set { YGNodeStyleSetBorder(node, .top, newValue.float) }
-        get { return YGNodeStyleGetBorder(node, .top).cgFloat }
+    public final var borderTopWidth: Float {
+        set { YGNodeStyleSetBorder(node, .top, newValue) }
+        get { return YGNodeStyleGetBorder(node, .top) }
     }
-    public final var borderRightWidth: CGFloat {
-        set { YGNodeStyleSetBorder(node, .right, newValue.float) }
-        get { return YGNodeStyleGetBorder(node, .right).cgFloat }
+    public final var borderRightWidth: Float {
+        set { YGNodeStyleSetBorder(node, .right, newValue) }
+        get { return YGNodeStyleGetBorder(node, .right) }
     }
-    public final var borderBottomWidth: CGFloat {
-        set { YGNodeStyleSetBorder(node, .bottom, newValue.float) }
-        get { return YGNodeStyleGetBorder(node, .bottom).cgFloat }
+    public final var borderBottomWidth: Float {
+        set { YGNodeStyleSetBorder(node, .bottom, newValue) }
+        get { return YGNodeStyleGetBorder(node, .bottom) }
     }
-    public final var borderStartWidth: CGFloat {
-        set { YGNodeStyleSetBorder(node, .start, newValue.float) }
-        get { return YGNodeStyleGetBorder(node, .start).cgFloat }
+    public final var borderStartWidth: Float {
+        set { YGNodeStyleSetBorder(node, .start, newValue) }
+        get { return YGNodeStyleGetBorder(node, .start) }
     }
-    public final var borderEndWidth: CGFloat {
-        set { YGNodeStyleSetBorder(node, .end, newValue.float) }
-        get { return YGNodeStyleGetBorder(node, .end).cgFloat }
+    public final var borderEndWidth: Float {
+        set { YGNodeStyleSetBorder(node, .end, newValue) }
+        get { return YGNodeStyleGetBorder(node, .end) }
     }
-    public final var borderWidth: CGFloat {
-        set { YGNodeStyleSetBorder(node, .all, newValue.float) }
-        get { return YGNodeStyleGetBorder(node, .all).cgFloat }
+    public final var borderWidth: Float {
+        set { YGNodeStyleSetBorder(node, .all, newValue) }
+        get { return YGNodeStyleGetBorder(node, .all) }
     }
 }

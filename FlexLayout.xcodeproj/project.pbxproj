@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE04F03622FD7D7D00315D54 /* FlexLayoutPhraser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F03522FD7D7D00315D54 /* FlexLayoutPhraser.swift */; };
 		CEB5C02B22FC4F030064EADF /* FlexLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB5C02922FC4F030064EADF /* FlexLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB5C05B22FC4FB50064EADF /* YGFloatOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB5C04022FC4FB50064EADF /* YGFloatOptional.h */; };
 		CEB5C05C22FC4FB50064EADF /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB5C04122FC4FB50064EADF /* Utils.h */; };
@@ -36,8 +37,8 @@
 		CEB5C07422FC4FB50064EADF /* YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C05922FC4FB50064EADF /* YGNode.cpp */; };
 		CEB5C07522FC4FB50064EADF /* YGValue.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB5C05A22FC4FB50064EADF /* YGValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB5C07C22FC4FF50064EADF /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C07622FC4FF40064EADF /* CSS.swift */; };
-		CEB5C07D22FC4FF50064EADF /* CSS+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C07722FC4FF40064EADF /* CSS+Types.swift */; };
-		CEB5C08122FC4FF50064EADF /* CSS+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C07B22FC4FF50064EADF /* CSS+Value.swift */; };
+		CEB5C07D22FC4FF50064EADF /* CSS+Expressible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C07722FC4FF40064EADF /* CSS+Expressible.swift */; };
+		CEB5C08122FC4FF50064EADF /* CSS.Value+postfix.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C07B22FC4FF50064EADF /* CSS.Value+postfix.swift */; };
 		CEB5C08D22FC51FD0064EADF /* Extension in Frameworks */ = {isa = PBXBuildFile; productRef = CEB5C08C22FC51FD0064EADF /* Extension */; };
 		CEB5C09222FC56BD0064EADF /* FlexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C07822FC4FF40064EADF /* FlexLayout.swift */; };
 		CEB5C09A22FC7BD40064EADF /* FlexLayout+position+margin+padding+border.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5C09322FC7BD40064EADF /* FlexLayout+position+margin+padding+border.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE04F03522FD7D7D00315D54 /* FlexLayoutPhraser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexLayoutPhraser.swift; sourceTree = "<group>"; };
 		CEB5C02622FC4F030064EADF /* FlexLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlexLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB5C02922FC4F030064EADF /* FlexLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexLayout.h; sourceTree = "<group>"; };
 		CEB5C02A22FC4F030064EADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,9 +80,9 @@
 		CEB5C05922FC4FB50064EADF /* YGNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = YGNode.cpp; sourceTree = "<group>"; };
 		CEB5C05A22FC4FB50064EADF /* YGValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGValue.h; sourceTree = "<group>"; };
 		CEB5C07622FC4FF40064EADF /* CSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSS.swift; sourceTree = "<group>"; };
-		CEB5C07722FC4FF40064EADF /* CSS+Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CSS+Types.swift"; sourceTree = "<group>"; };
+		CEB5C07722FC4FF40064EADF /* CSS+Expressible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CSS+Expressible.swift"; sourceTree = "<group>"; };
 		CEB5C07822FC4FF40064EADF /* FlexLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexLayout.swift; sourceTree = "<group>"; };
-		CEB5C07B22FC4FF50064EADF /* CSS+Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CSS+Value.swift"; sourceTree = "<group>"; };
+		CEB5C07B22FC4FF50064EADF /* CSS.Value+postfix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CSS.Value+postfix.swift"; sourceTree = "<group>"; };
 		CEB5C09322FC7BD40064EADF /* FlexLayout+position+margin+padding+border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexLayout+position+margin+padding+border.swift"; sourceTree = "<group>"; };
 		CEB5C09422FC7BD40064EADF /* FlexLayout+width+height.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexLayout+width+height.swift"; sourceTree = "<group>"; };
 		CEB5C09622FC7BD40064EADF /* FlexLayout+property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlexLayout+property.swift"; sourceTree = "<group>"; };
@@ -131,8 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				CEB5C07622FC4FF40064EADF /* CSS.swift */,
-				CEB5C07722FC4FF40064EADF /* CSS+Types.swift */,
-				CEB5C07B22FC4FF50064EADF /* CSS+Value.swift */,
+				CEB5C07722FC4FF40064EADF /* CSS+Expressible.swift */,
+				CEB5C07B22FC4FF50064EADF /* CSS.Value+postfix.swift */,
+				CE04F03522FD7D7D00315D54 /* FlexLayoutPhraser.swift */,
 				CEB5C07822FC4FF40064EADF /* FlexLayout.swift */,
 				CEB5C09622FC7BD40064EADF /* FlexLayout+property.swift */,
 				CEB5C09322FC7BD40064EADF /* FlexLayout+position+margin+padding+border.swift */,
@@ -280,6 +283,7 @@
 			files = (
 				CEB5C06422FC4FB50064EADF /* YGLayout.cpp in Sources */,
 				CEB5C07322FC4FB50064EADF /* YGConfig.cpp in Sources */,
+				CE04F03622FD7D7D00315D54 /* FlexLayoutPhraser.swift in Sources */,
 				CEB5C06822FC4FB50064EADF /* YGStyle.cpp in Sources */,
 				CEB5C06722FC4FB50064EADF /* Yoga.cpp in Sources */,
 				CEB5C06922FC4FB50064EADF /* YGMarker.cpp in Sources */,
@@ -290,9 +294,9 @@
 				CEB5C09222FC56BD0064EADF /* FlexLayout.swift in Sources */,
 				CEB5C07422FC4FB50064EADF /* YGNode.cpp in Sources */,
 				CEB5C06B22FC4FB50064EADF /* YGNodePrint.cpp in Sources */,
-				CEB5C08122FC4FF50064EADF /* CSS+Value.swift in Sources */,
+				CEB5C08122FC4FF50064EADF /* CSS.Value+postfix.swift in Sources */,
 				CEB5C09B22FC7BD40064EADF /* FlexLayout+width+height.swift in Sources */,
-				CEB5C07D22FC4FF50064EADF /* CSS+Types.swift in Sources */,
+				CEB5C07D22FC4FF50064EADF /* CSS+Expressible.swift in Sources */,
 				CEB5C06022FC4FB50064EADF /* log.cpp in Sources */,
 				CEB5C06122FC4FB50064EADF /* Utils.cpp in Sources */,
 				CEB5C09A22FC7BD40064EADF /* FlexLayout+position+margin+padding+border.swift in Sources */,

@@ -135,6 +135,15 @@ extension FlexLayout {
     }
 }
 
+// MARK: - dynamic config layout
+extension FlexLayout {
+    @discardableResult
+    public final func set(layout: [String: String]) -> Self {
+        FlexLayoutPhraser.phrase(layout: self, map: layout)
+        return self
+    }
+}
+
 extension FlexLayout {
     open override func setValue(_ value: Any?, forUndefinedKey key: String) {
         super.setValue(value, forUndefinedKey: key)

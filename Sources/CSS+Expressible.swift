@@ -3,18 +3,6 @@
 
 import Foundation
 
-extension CSS {
-    public typealias Direction = YGDirection
-    public typealias FlexDirection = YGFlexDirection
-    public typealias Justify = YGJustify
-    public typealias Align = YGAlign
-    public typealias Position = YGPositionType
-    public typealias Wrap = YGWrap
-    public typealias Overflow = YGOverflow
-    public typealias Display = YGDisplay
-}
-
-// MARK: - = support
 extension CSS.Direction: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) {
         switch value {
@@ -117,51 +105,50 @@ extension CSS.Display: ExpressibleByStringLiteral {
     }
 }
 
-// MARK: - dynamic setValue support
-extension CSS.Direction {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
+extension CSS.Value: ExpressibleByIntegerLiteral {
+    public typealias IntegerLiteralType = Int
+    public init(integerLiteral value: Int) {
+        self = CSS.Value(value: Float(value), unit: .point)
     }
 }
 
-extension CSS.FlexDirection {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
+extension CSS.Value: ExpressibleByFloatLiteral {
+    public typealias FloatLiteralType = Float
+    public init(floatLiteral value: Float) {
+        self = CSS.Value(value: Float(value), unit: .point)
     }
 }
 
-extension CSS.Justify {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
+extension CSS.Value: ExpressibleByStringLiteral {
+    public typealias StringLiteralType = String
+    public init(stringLiteral value: String) {
+        var str = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        if str == "auto" {
+            self = .auto
+            return
+        } else if str.last == "%" {
+            str = String(str.prefix(str.count - 1))
+            if let number = Float(str) {
+                self = CSS.Value(value: number, unit: .percent)
+                return
+            }
+        } else {
+            if let number = Float(str) {
+                self = CSS.Value(value: number, unit: .point)
+                return
+            }
+        }
+        preconditionFailure("This value: \(value) is not invalid")
     }
 }
 
-extension CSS.Align {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Position {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Wrap {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Overflow {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Display {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
+extension CSS.Float: ExpressibleByStringLiteral {
+    public typealias StringLiteralType = String
+    public init(stringLiteral value: String) {
+        if let float = Swift.Float(value) {
+            self = CSS.Float(value: float)
+            return
+        }
+        preconditionFailure("This value: \(value) is not invalid")
     }
 }

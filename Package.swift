@@ -14,7 +14,7 @@ let package = Package(
         .package(url: "https://github.com/DingSoung/Extension", from: "0.8.9")
     ],
     targets: [
-        .target(name: "FlexLayout", path: "Sources")
+        .target(name: "FlexLayout", path: "Sources", publicHeadersPath: "yoga")
     ],
     swiftLanguageVersions: [
         .version("5.0.0")
