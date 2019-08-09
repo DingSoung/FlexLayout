@@ -21,7 +21,7 @@ open class FlexLayout {
     // Flex Layout Guide: http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
     lazy var node: YGNodeRef = {
         let globalConfig: YGConfigRef = YGConfigNew()
-        YGConfigSetExperimentalFeatureEnabled(globalConfig, YGExperimentalFeature.webFlexBasis, true)
+        YGConfigSetExperimentalFeatureEnabled(globalConfig, .webFlexBasis, true)
         YGConfigSetPointScaleFactor(globalConfig, Float(UIScreen.main.scale))
         return YGNodeNewWithConfig(globalConfig)
     }()
