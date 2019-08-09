@@ -133,13 +133,13 @@
 			isa = PBXGroup;
 			children = (
 				CEB5C07622FC4FF40064EADF /* CSS.swift */,
-				CEB5C07722FC4FF40064EADF /* CSS+Expressible.swift */,
 				CEB5C07B22FC4FF50064EADF /* CSS.Value+postfix.swift */,
-				CE04F03522FD7D7D00315D54 /* FlexLayoutPhraser.swift */,
+				CEB5C07722FC4FF40064EADF /* CSS+Expressible.swift */,
 				CEB5C07822FC4FF40064EADF /* FlexLayout.swift */,
-				CEB5C09622FC7BD40064EADF /* FlexLayout+property.swift */,
 				CEB5C09322FC7BD40064EADF /* FlexLayout+position+margin+padding+border.swift */,
+				CEB5C09622FC7BD40064EADF /* FlexLayout+property.swift */,
 				CEB5C09422FC7BD40064EADF /* FlexLayout+width+height.swift */,
+				CE04F03522FD7D7D00315D54 /* FlexLayoutPhraser.swift */,
 				CEB5C03822FC4F5F0064EADF /* module.modulemap */,
 			);
 			path = Sources;

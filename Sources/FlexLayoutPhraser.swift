@@ -5,56 +5,6 @@ import Foundation
 import CoreGraphics
 import Extension
 
-// MARK: - dynamic setValue support
-extension CSS.Direction {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.FlexDirection {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Justify {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Align {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Position {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Wrap {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Overflow {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-extension CSS.Display {
-    var nsValue: NSNumber {
-        return NSNumber(value: rawValue)
-    }
-}
-
-
 class FlexLayoutPhraser {
     @inline(__always)
     private static let cssAlignPhraser: (String) -> CSS.Align = { CSS.Align(stringLiteral: $0) }
@@ -79,7 +29,6 @@ class FlexLayoutPhraser {
             case "flex": layout.flex = floatPhraser(pair.value).value
             case "flex-grow": layout.flexGrow = floatPhraser(pair.value).value
             case "flex-shrink": layout.flexShrink = floatPhraser(pair.value).value
-            
             case "flex-basis": layout.flexBasis = cssValuePhraser(pair.value)
             //position
             case "left": layout.left = cssValuePhraser(pair.value)

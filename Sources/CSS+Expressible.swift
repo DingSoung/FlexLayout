@@ -143,8 +143,8 @@ extension CSS.Value: ExpressibleByStringLiteral {
 }
 
 extension CSS.Float: ExpressibleByStringLiteral {
-    public typealias StringLiteralType = String
-    public init(stringLiteral value: String) {
+    typealias StringLiteralType = String
+    init(stringLiteral value: String) {
         if let float = Swift.Float(value) {
             self = CSS.Float(value: float)
             return

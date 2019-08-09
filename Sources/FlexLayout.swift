@@ -2,12 +2,10 @@
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
 import Foundation
-import CoreGraphics
 import Extension
 import UIKit
 
-@objcMembers
-open class FlexLayout: NSObject {
+open class FlexLayout {
     private var isEnabled = true
     private var isIncludedInLayout = true
 
@@ -31,6 +29,7 @@ open class FlexLayout: NSObject {
     private var children = [FlexLayout]()
 }
 
+// MARK: - structure
 extension FlexLayout {
     @discardableResult
     public final func set(children: [FlexLayout]) -> Self {
@@ -117,6 +116,12 @@ extension FlexLayout {
 // MARK: - layout access
 extension FlexLayout {
     @discardableResult
+    public final func set(layout: [String: String]) -> Self {
+        FlexLayoutPhraser.phrase(layout: self, map: layout)
+        return self
+    }
+
+    @discardableResult
     public final func calculateLayout(size: CGSize = CGSize(width: YGValue.undefined.value,
                                                             height: YGValue.undefined.value)) -> CGSize {
         YGNodeCalculateLayout(node,
@@ -132,21 +137,5 @@ extension FlexLayout {
                       y: YGNodeLayoutGetTop(node),
                       width: YGNodeLayoutGetWidth(node),
                       height: YGNodeLayoutGetHeight(node))
-    }
-}
-
-// MARK: - dynamic config layout
-extension FlexLayout {
-    @discardableResult
-    public final func set(layout: [String: String]) -> Self {
-        FlexLayoutPhraser.phrase(layout: self, map: layout)
-        return self
-    }
-}
-
-extension FlexLayout {
-    open override func setValue(_ value: Any?, forUndefinedKey key: String) {
-        super.setValue(value, forUndefinedKey: key)
-        error("can not apply style:", key, value ?? "nil")
     }
 }
