@@ -21,8 +21,16 @@ extension FlexLayout.Float: ExpressibleByStringLiteral {
 }
 
 extension FlexLayout {
-    func phrase(layout: [String: String]) {
-        layout.forEach {
+    func phrase(cssString: String) {
+        guard let map = cssString.cssMap else {
+            error("cssString format error")
+            return
+        }
+        phrase(map: map)
+    }
+
+    func phrase(map: [String: String]) {
+        map.forEach {
             switch $0.key {
             case "direction":       direction        = Direction(stringLiteral: $0.value)
             case "flex-direction":  flexDirection    = FlexDirection(stringLiteral: $0.value)

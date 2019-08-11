@@ -7,43 +7,98 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-9EA59D.svg)](https://paypal.me/DingSongwen)
 
-A CSS Flex Layout for iOS
+一个 iOS 的 Flexbox Layout 工具
 
-# Install
+# 安装
 
-SPM
+Swift Package Manager
 
 ```swift
 https://github.com/DingSoung/FlexLayout master
 ```
 
-# Usage
+Carthage
+
+```swift
+github: DingSoung/FlexLayout master
+```
+
+# 使用
+
+## 构造树
+
+```swift
+let layout1 = FlexLayout()
+layout1....
+let layout2 = FlexLayout()
+layout1....
+let layout3 = FlexLayout()
+layout1.set(children: [layout2, layout3])
+```
+
+## 计算
+
+```swift
+_ = layout1.intrinsicSize
+print(layout1.frame, layout2.frame, layout3.frame)
+```
+
+## 赋值方式
+
+### 方式 1: 直接赋值
+
+* 数值，美剧，结构
 
 ```swift
 let layout = FlexLayout()
-layout.marginLeft = "10"
-layout.width = 300
+layout.width = .Value(value: 80, unit: .percent)
 layout.height = 300
-layout.marginTop = 100
 layout.alignItems = .flexStart
-layout.flexDirection = .row
-layout.borderWidth = "3"
+```
 
-let layout2 = FlexLayout()
-layout2.aspectRatio = 1
-layout2.width = 20%
-layout2.margin = 8
+* 支持字符串复制
 
-let layout3 = FlexLayout()
-layout3.set(layout: [
+```swift
+let layout = FlexLayout()
+layout.height = "300"
+layout.alignItems = "flex-start"
+layout.width = "80%"
+```
+
+* 支持百分数
+
+```swift
+let layout = FlexLayout()
+layout.width = 80%
+```
+
+### 方式 2: 动态赋值
+
+* CSS 字典 
+
+```swift
+let layout = FlexLayout()
+layout.set(layout: [
 		"aspect-ratio": "1",
 		"width": "50%",
 		"margin": "8"
      ]
 )
-
-layout.set(children: [layout2, layout3])
-_ = layout.intrinsicSize
-print(layout.frame, layout2.frame, layout3.frame)
 ```
 
+* CSS 字符串
+
+```swift
+let layout = FlexLayout()
+layout.set(layout: "aspect-ratio: 1; width: 50%; margin: 8")
+```
+
+### 方式 3: 链式调用
+
+```swift
+let layout = FlexLayout()
+	.margin(8)
+	.flexShrink(1)
+	.width(100%)
+	.height(.auto)
+```

@@ -119,7 +119,13 @@ extension FlexLayout {
 extension FlexLayout {
     @discardableResult
     public final func set(layout: [String: String]) -> Self {
-        phrase(layout: layout)
+        phrase(map: layout)
+        return self
+    }
+
+    @discardableResult
+    public final func set(layout: String) -> Self {
+        phrase(cssString: layout)
         return self
     }
 
