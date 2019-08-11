@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE04F03622FD7D7D00315D54 /* FlexLayoutPhraser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F03522FD7D7D00315D54 /* FlexLayoutPhraser.swift */; };
 		CE04F04022FFCFDE00315D54 /* FlexLayoutChanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F03F22FFCFDE00315D54 /* FlexLayoutChanning.swift */; };
+		CE04F04222FFF67B00315D54 /* View+FlexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F04122FFF67B00315D54 /* View+FlexLayout.swift */; };
 		CEB5C02B22FC4F030064EADF /* FlexLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB5C02922FC4F030064EADF /* FlexLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB5C05B22FC4FB50064EADF /* YGFloatOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB5C04022FC4FB50064EADF /* YGFloatOptional.h */; };
 		CEB5C05C22FC4FB50064EADF /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = CEB5C04122FC4FB50064EADF /* Utils.h */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		CE04F03522FD7D7D00315D54 /* FlexLayoutPhraser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexLayoutPhraser.swift; sourceTree = "<group>"; };
 		CE04F03F22FFCFDE00315D54 /* FlexLayoutChanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexLayoutChanning.swift; sourceTree = "<group>"; };
+		CE04F04122FFF67B00315D54 /* View+FlexLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+FlexLayout.swift"; sourceTree = "<group>"; };
 		CEB5C02622FC4F030064EADF /* FlexLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlexLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB5C02922FC4F030064EADF /* FlexLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexLayout.h; sourceTree = "<group>"; };
 		CEB5C02A22FC4F030064EADF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,16 +136,17 @@
 		CEB5C03122FC4F5F0064EADF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CEB5C03822FC4F5F0064EADF /* module.modulemap */,
 				CEB5C07822FC4FF40064EADF /* FlexLayout.swift */,
 				CEB5C09322FC7BD40064EADF /* FlexLayout+position+margin+padding+border.swift */,
 				CEB5C09622FC7BD40064EADF /* FlexLayout+property.swift */,
 				CEB5C09422FC7BD40064EADF /* FlexLayout+width+height.swift */,
+				CE04F03F22FFCFDE00315D54 /* FlexLayoutChanning.swift */,
 				CE04F03522FD7D7D00315D54 /* FlexLayoutPhraser.swift */,
 				CEB5C07622FC4FF40064EADF /* FlexLayoutTypes.swift */,
 				CEB5C07722FC4FF40064EADF /* FlexLayoutTypes+Expressible.swift */,
 				CEB5C07B22FC4FF50064EADF /* FlexStyleValueType+postfix.swift */,
-				CE04F03F22FFCFDE00315D54 /* FlexLayoutChanning.swift */,
+				CEB5C03822FC4F5F0064EADF /* module.modulemap */,
+				CE04F04122FFF67B00315D54 /* View+FlexLayout.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			files = (
 				CEB5C06422FC4FB50064EADF /* YGLayout.cpp in Sources */,
 				CEB5C07322FC4FB50064EADF /* YGConfig.cpp in Sources */,
+				CE04F04222FFF67B00315D54 /* View+FlexLayout.swift in Sources */,
 				CE04F03622FD7D7D00315D54 /* FlexLayoutPhraser.swift in Sources */,
 				CEB5C06822FC4FB50064EADF /* YGStyle.cpp in Sources */,
 				CEB5C06722FC4FB50064EADF /* Yoga.cpp in Sources */,

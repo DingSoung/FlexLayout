@@ -47,7 +47,7 @@ print(layout1.frame, layout2.frame, layout3.frame)
 
 ### 方式 1: 直接赋值
 
-* 数值，美剧，结构
+* 数值，枚举，结构
 
 ```swift
 let layout = FlexLayout()
@@ -101,4 +101,64 @@ let layout = FlexLayout()
 	.flexShrink(1)
 	.width(100%)
 	.height(.auto)
+```
+
+## 特征
+
+* 纯 Swift &  C/C++ 
+
+* 基于 Yoga， 性能远超 AutoLayout
+
+  参考 [ayoutFrameworkBenchmark](https://github.com/layoutBox/LayoutFrameworkBenchmark)
+
+* Fondation,  依赖极少
+
+```swift
+#import FlexLayout
+```
+
+* 使用简便
+
+```swift
+let view = UIVIew()
+view.layout.width(100).height(200)
+
+let label = UILabel()
+label.width(80%).top(10)
+
+view.addSubView(label)
+view.layout.setChildren(label.layout)
+
+_ = view.layout.intrinsicSize
+view.recursiveSyncFrame()
+```
+
+* 支持异步线程
+
+```swift
+DispatchQueue.global.async {
+	let layout = FlexLayout()
+  layout...
+	 _ = layout.intrinsicSize
+	 DispatchQueue.main.async {
+	 		view.frame = layout.frame
+	 }
+}
+```
+
+* 绝对控制
+
+```swift
+view.frame = ...
+
+let layout = FlexLayout()
+layout...
+_ = layout.intrinsicSize
+view.frame = layout.frame
+
+layout.width = 100%
+_ = layout.intrinsicSize
+UIView.animation {
+	view.frame = layout.frame
+}
 ```
