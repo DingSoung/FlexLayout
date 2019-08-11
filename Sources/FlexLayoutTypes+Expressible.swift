@@ -3,7 +3,7 @@
 
 import Foundation
 
-extension CSS.Direction: ExpressibleByStringLiteral {
+extension FlexLayout.Direction: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) {
         switch value {
         case "ltr": self = .LTR
@@ -14,7 +14,7 @@ extension CSS.Direction: ExpressibleByStringLiteral {
     }
 }
 
-extension CSS.FlexDirection: ExpressibleByStringLiteral {
+extension FlexLayout.FlexDirection: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
     public init(stringLiteral value: String) {
         switch value {
@@ -27,7 +27,7 @@ extension CSS.FlexDirection: ExpressibleByStringLiteral {
     }
 }
 
-extension CSS.Justify: ExpressibleByStringLiteral {
+extension FlexLayout.Justify: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
     public init(stringLiteral value: String) {
         switch value {
@@ -42,7 +42,7 @@ extension CSS.Justify: ExpressibleByStringLiteral {
     }
 }
 
-extension CSS.Align: ExpressibleByStringLiteral {
+extension FlexLayout.Align: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
     public init(stringLiteral value: String) {
         switch value {
@@ -59,7 +59,7 @@ extension CSS.Align: ExpressibleByStringLiteral {
     }
 }
 
-extension CSS.Position: ExpressibleByStringLiteral {
+extension FlexLayout.Position: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
     public init(stringLiteral value: String) {
         switch value {
@@ -70,7 +70,7 @@ extension CSS.Position: ExpressibleByStringLiteral {
     }
 }
 
-extension CSS.Wrap: ExpressibleByStringLiteral {
+extension FlexLayout.Wrap: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
     public init(stringLiteral value: String) {
         switch value {
@@ -82,7 +82,7 @@ extension CSS.Wrap: ExpressibleByStringLiteral {
     }
 }
 
-extension CSS.Overflow: ExpressibleByStringLiteral {
+extension FlexLayout.Overflow: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
     public init(stringLiteral value: String) {
         switch value {
@@ -94,7 +94,7 @@ extension CSS.Overflow: ExpressibleByStringLiteral {
     }
 }
 
-extension CSS.Display: ExpressibleByStringLiteral {
+extension FlexLayout.Display: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
     public init(stringLiteral value: String) {
         switch value {
@@ -105,21 +105,21 @@ extension CSS.Display: ExpressibleByStringLiteral {
     }
 }
 
-extension CSS.Value: ExpressibleByIntegerLiteral {
+extension FlexLayout.Value: ExpressibleByIntegerLiteral {
     public typealias IntegerLiteralType = Int
     public init(integerLiteral value: Int) {
-        self = CSS.Value(value: Float(value), unit: .point)
+        self = FlexLayout.Value(value: Float(value), unit: .point)
     }
 }
 
-extension CSS.Value: ExpressibleByFloatLiteral {
+extension FlexLayout.Value: ExpressibleByFloatLiteral {
     public typealias FloatLiteralType = Float
     public init(floatLiteral value: Float) {
-        self = CSS.Value(value: Float(value), unit: .point)
+        self = FlexLayout.Value(value: Float(value), unit: .point)
     }
 }
 
-extension CSS.Value: ExpressibleByStringLiteral {
+extension FlexLayout.Value: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
     public init(stringLiteral value: String) {
         var str = value.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -129,12 +129,12 @@ extension CSS.Value: ExpressibleByStringLiteral {
         } else if str.last == "%" {
             str = String(str.prefix(str.count - 1))
             if let number = Float(str) {
-                self = CSS.Value(value: number, unit: .percent)
+                self = FlexLayout.Value(value: number, unit: .percent)
                 return
             }
         } else {
             if let number = Float(str) {
-                self = CSS.Value(value: number, unit: .point)
+                self = FlexLayout.Value(value: number, unit: .point)
                 return
             }
         }
@@ -142,11 +142,11 @@ extension CSS.Value: ExpressibleByStringLiteral {
     }
 }
 
-extension CSS.Float: ExpressibleByStringLiteral {
+extension FlexLayout.Float: ExpressibleByStringLiteral {
     typealias StringLiteralType = String
     init(stringLiteral value: String) {
         if let float = Swift.Float(value) {
-            self = CSS.Float(value: float)
+            self = FlexLayout.Float(value: float)
             return
         }
         preconditionFailure("This value: \(value) is not invalid")

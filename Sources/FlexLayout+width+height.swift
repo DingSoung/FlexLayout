@@ -5,7 +5,7 @@ import Foundation
 import Extension
 
 extension FlexLayout {
-    public final var width: CSS.Value {
+    public final var width: Value {
         set {
             switch newValue.unit {
             case .point:
@@ -22,7 +22,7 @@ extension FlexLayout {
         }
         get { return YGNodeStyleGetWidth(node) }
     }
-    public final var height: CSS.Value {
+    public final var height: Value {
         set {
             switch newValue.unit {
             case .point:
@@ -42,7 +42,7 @@ extension FlexLayout {
 }
 
 extension FlexLayout {
-    public final var minWidth: CSS.Value {
+    public final var minWidth: Value {
         set {
             switch newValue.unit {
             case .point:
@@ -57,7 +57,7 @@ extension FlexLayout {
         }
         get { return YGNodeStyleGetMinWidth(node) }
     }
-    public final var minHeight: CSS.Value {
+    public final var minHeight: Value {
         set {
             switch newValue.unit {
             case .point:
@@ -72,7 +72,7 @@ extension FlexLayout {
         }
         get { return YGNodeStyleGetMinHeight(node) }
     }
-    public final var maxWidth: CSS.Value {
+    public final var maxWidth: Value {
         set {
             switch newValue.unit {
             case .point:
@@ -87,7 +87,7 @@ extension FlexLayout {
         }
         get { return YGNodeStyleGetMaxWidth(node) }
     }
-    public final var maxHeight: CSS.Value {
+    public final var maxHeight: Value {
         set {
             switch newValue.unit {
             case .point:
@@ -105,7 +105,7 @@ extension FlexLayout {
 }
 
 extension FlexLayout {
-    public final var aspectRatio: Float {
+    public final var aspectRatio: Swift.Float {
         set { YGNodeStyleSetAspectRatio(node, newValue) }
         get { return YGNodeStyleGetAspectRatio(node) }
     }

@@ -4,7 +4,7 @@
 import Foundation
 import CoreGraphics
 
-public struct CSS {
+extension FlexLayout {
     public typealias Direction = YGDirection
     public typealias FlexDirection = YGFlexDirection
     public typealias Justify = YGJustify
@@ -18,13 +18,13 @@ public struct CSS {
     }
 }
 
-extension CSS {
+extension FlexLayout {
     public typealias Unit = YGUnit
     public typealias Value = YGValue
 }
 
-extension CSS.Value {
-    public static let auto: CSS.Value = YGValueAuto
-    public static let undefined: CSS.Value = YGValueUndefined
-    public static let zero: CSS.Value = YGValueZero
+extension FlexLayout.Value {
+    public static let auto = YGValueAuto
+    public static let undefined = YGValueUndefined
+    public static let zero = YGValueZero
 }

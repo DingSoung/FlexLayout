@@ -6,43 +6,43 @@ import Extension
 
 // MARK: - basic properties
 extension FlexLayout {
-    public final var direction: CSS.Direction {
+    public final var direction: Direction {
         set { YGNodeStyleSetDirection(node, newValue) }
         get { return YGNodeStyleGetDirection(node)}
     }
-    public final var flexDirection: CSS.FlexDirection {
+    public final var flexDirection: FlexDirection {
         set { YGNodeStyleSetFlexDirection(node, newValue) }
         get { return YGNodeStyleGetFlexDirection(node) }
     }
-    public final var justifyContent: CSS.Justify {
+    public final var justifyContent: Justify {
         set { YGNodeStyleSetJustifyContent(node, newValue) }
         get { return YGNodeStyleGetJustifyContent(node) }
     }
-    public final var alignContent: CSS.Align {
+    public final var alignContent: Align {
         set { YGNodeStyleSetAlignContent(node, newValue) }
         get { return YGNodeStyleGetAlignContent(node) }
     }
-    public final var alignItems: CSS.Align {
+    public final var alignItems: Align {
         set { YGNodeStyleSetAlignItems(node, newValue) }
         get { return YGNodeStyleGetAlignItems(node) }
     }
-    public final var alignSelf: CSS.Align {
+    public final var alignSelf: Align {
         set { YGNodeStyleSetAlignSelf(node, newValue) }
         get { return YGNodeStyleGetAlignSelf(node) }
     }
-    public final var position: CSS.Position {
+    public final var position: Position {
         set { YGNodeStyleSetPositionType(node, newValue) }
         get { return YGNodeStyleGetPositionType(node) }
     }
-    public final var flexWrap: CSS.Wrap {
+    public final var flexWrap: Wrap {
         set { YGNodeStyleSetFlexWrap(node, newValue) }
         get { return YGNodeStyleGetFlexWrap(node) }
     }
-    public final var overflow: CSS.Overflow {
+    public final var overflow: Overflow {
         set { YGNodeStyleSetOverflow(node, newValue) }
         get { return YGNodeStyleGetOverflow(node) }
     }
-    public final var display: CSS.Display {
+    public final var display: Display {
         set { YGNodeStyleSetDisplay(node, newValue) }
         get { return YGNodeStyleGetDisplay(node) }
     }
@@ -50,19 +50,19 @@ extension FlexLayout {
 
 // MARK: - Flex Properties
 extension FlexLayout {
-    public final var flex: Float {
+    public final var flex: Swift.Float {
         set { YGNodeStyleSetFlex(node, newValue) }
         get { return YGNodeStyleGetFlex(node) }
     }
-    public final var flexGrow: Float {
+    public final var flexGrow: Swift.Float {
         set { YGNodeStyleSetFlexGrow(node, newValue) }
         get { return YGNodeStyleGetFlexGrow(node) }
     }
-    public final var flexShrink: Float {
+    public final var flexShrink: Swift.Float {
          set { YGNodeStyleSetFlexShrink(node, newValue) }
         get { return YGNodeStyleGetFlexShrink(node) }
     }
-    public final var flexBasis: CSS.Value {
+    public final var flexBasis: Value {
         set {
             switch newValue.unit {
             case .point:
@@ -82,7 +82,7 @@ extension FlexLayout {
 }
 
 extension FlexLayout {
-    public final var resolvedDirection: CSS.Direction {
+    public final var resolvedDirection: Direction {
         return YGNodeLayoutGetDirection(node)
     }
 }

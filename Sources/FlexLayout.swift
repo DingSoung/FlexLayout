@@ -22,7 +22,7 @@ open class FlexLayout {
     lazy var node: YGNodeRef = {
         let globalConfig: YGConfigRef = YGConfigNew()
         YGConfigSetExperimentalFeatureEnabled(globalConfig, .webFlexBasis, true)
-        YGConfigSetPointScaleFactor(globalConfig, Float(UIScreen.main.scale))
+        YGConfigSetPointScaleFactor(globalConfig, Swift.Float(UIScreen.main.scale))
         return YGNodeNewWithConfig(globalConfig)
     }()
 
@@ -87,21 +87,21 @@ extension FlexLayout {
     }
 
     private static let measureFunc:
-        @convention(c) (YGNodeRef?, Float, YGMeasureMode, Float, YGMeasureMode) -> YGSize = {
+        @convention(c) (YGNodeRef?, Swift.Float, YGMeasureMode, Swift.Float, YGMeasureMode) -> YGSize = {
         (node, width, widthMode, height, heightMode) in
-        let constrainedWidth = widthMode == .undefined ? Float.greatestFiniteMagnitude : width
-        let constrainedHeight = heightMode == .undefined ? Float.greatestFiniteMagnitude: height
+        let constrainedWidth = widthMode == .undefined ? Swift.Float.greatestFiniteMagnitude : width
+        let constrainedHeight = heightMode == .undefined ? Swift.Float.greatestFiniteMagnitude: height
         var measureSize = CGSize.zero
         if let context = YGNodeGetContext(node)?.assumingMemoryBound(to: Context.self).pointee {
             measureSize = context.sizeThatFits(CGSize(width: constrainedWidth, height: constrainedHeight))
         } else {
             warning("no measureFunc")
         }
-        return YGSize(width: sanitizeMeasurement(constrainedWidth, Float(measureSize.width), widthMode),
-                      height: sanitizeMeasurement(constrainedHeight, Float(measureSize.height), heightMode))
+        return YGSize(width: sanitizeMeasurement(constrainedWidth, Swift.Float(measureSize.width), widthMode),
+                      height: sanitizeMeasurement(constrainedHeight, Swift.Float(measureSize.height), heightMode))
     }
 
-    private static func sanitizeMeasurement(_ constrained: Float, _ measured: Float, _ mode: YGMeasureMode) -> Float {
+    private static func sanitizeMeasurement(_ constrained: Swift.Float, _ measured: Swift.Float, _ mode: YGMeasureMode) -> Swift.Float {
         switch mode {
         case .exactly:
             return constrained
@@ -119,7 +119,7 @@ extension FlexLayout {
 extension FlexLayout {
     @discardableResult
     public final func set(layout: [String: String]) -> Self {
-        FlexLayoutPhraser.phrase(layout: self, map: layout)
+        phrase(layout: layout)
         return self
     }
 
@@ -127,8 +127,8 @@ extension FlexLayout {
     public final func calculateLayout(size: CGSize = CGSize(width: YGValue.undefined.value,
                                                             height: YGValue.undefined.value)) -> CGSize {
         YGNodeCalculateLayout(node,
-                              Float(size.width),
-                              Float(size.height),
+                              Swift.Float(size.width),
+                              Swift.Float(size.height),
                               YGNodeStyleGetDirection(node))
         return CGSize(width: YGNodeLayoutGetWidth(node),
                       height: YGNodeLayoutGetHeight(node))
