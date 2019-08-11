@@ -1,6 +1,7 @@
 //  Created by Songwen Ding on 2019/4/16.
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
+import Foundation
 import Extension
 
 extension FlexLayout {

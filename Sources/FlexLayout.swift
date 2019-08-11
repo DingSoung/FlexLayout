@@ -2,8 +2,8 @@
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
 import Foundation
-import Extension
 import UIKit
+import Extension
 
 open class FlexLayout {
     private var isEnabled = true

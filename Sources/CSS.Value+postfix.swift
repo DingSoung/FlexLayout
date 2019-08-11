@@ -17,9 +17,3 @@ extension Float {
         return CSS.Value(value: value, unit: .percent)
     }
 }
-
-extension CGFloat {
-    public static postfix func % (value: CGFloat) -> CSS.Value {
-        return CSS.Value(value: Float(value), unit: .percent)
-    }
-}

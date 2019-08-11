@@ -2,7 +2,6 @@
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
 import Foundation
-import CoreGraphics
 import Extension
 
 class FlexLayoutPhraser {
