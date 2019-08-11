@@ -27,6 +27,8 @@ open class FlexLayout {
     }()
 
     private var children = [FlexLayout]()
+
+    public init() {}
 }
 
 // MARK: - structure
