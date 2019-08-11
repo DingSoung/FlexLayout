@@ -39,7 +39,7 @@ layout1.set(children: [layout2, layout3])
 ## 计算
 
 ```swift
-_ = layout1.intrinsicSize
+_ = layout1.calculateLayout()
 print(layout1.frame, layout2.frame, layout3.frame)
 ```
 
@@ -129,7 +129,7 @@ label.width(80%).top(10)
 view.addSubView(label)
 view.layout.setChildren(label.layout)
 
-_ = view.layout.intrinsicSize
+_ = view.layout.calculateLayout()
 view.recursiveSyncFrame()
 ```
 
@@ -139,7 +139,7 @@ view.recursiveSyncFrame()
 DispatchQueue.global.async {
 	let layout = FlexLayout()
   layout...
-	 _ = layout.intrinsicSize
+	 _ = layout.calculateLayout()
 	 DispatchQueue.main.async {
 	 		view.frame = layout.frame
 	 }
@@ -153,7 +153,7 @@ view.frame = ...
 
 let layout = FlexLayout()
 layout...
-_ = layout.intrinsicSize
+_ = layout.calculateLayout()
 view.frame = layout.frame
 
 layout.width = 100%
