@@ -5,6 +5,22 @@ import Foundation
 import Extension
 
 extension FlexLayout {
+    fileprivate struct Float {
+        var value: Swift.Float = 0
+    }
+}
+extension FlexLayout.Float: ExpressibleByStringLiteral {
+    fileprivate typealias StringLiteralType = String
+    fileprivate init(stringLiteral value: String) {
+        if let float = Swift.Float(value) {
+            self = FlexLayout.Float(value: float)
+            return
+        }
+        preconditionFailure("This value: \(value) is not invalid")
+    }
+}
+
+extension FlexLayout {
     func phrase(layout: [String: String]) {
         layout.forEach {
             switch $0.key {

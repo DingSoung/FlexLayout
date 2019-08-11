@@ -50,15 +50,15 @@ extension FlexLayout {
 
 // MARK: - Flex Properties
 extension FlexLayout {
-    public final var flex: Swift.Float {
+    public final var flex: Float {
         set { YGNodeStyleSetFlex(node, newValue) }
         get { return YGNodeStyleGetFlex(node) }
     }
-    public final var flexGrow: Swift.Float {
+    public final var flexGrow: Float {
         set { YGNodeStyleSetFlexGrow(node, newValue) }
         get { return YGNodeStyleGetFlexGrow(node) }
     }
-    public final var flexShrink: Swift.Float {
+    public final var flexShrink: Float {
          set { YGNodeStyleSetFlexShrink(node, newValue) }
         get { return YGNodeStyleGetFlexShrink(node) }
     }

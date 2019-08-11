@@ -156,31 +156,31 @@ extension FlexLayout {
 
 // MARK: - border
 extension FlexLayout {
-    public final var borderLeftWidth: Swift.Float {
+    public final var borderLeftWidth: Float {
         set { YGNodeStyleSetBorder(node, .left, newValue) }
         get { return YGNodeStyleGetBorder(node, .left) }
     }
-    public final var borderTopWidth: Swift.Float {
+    public final var borderTopWidth: Float {
         set { YGNodeStyleSetBorder(node, .top, newValue) }
         get { return YGNodeStyleGetBorder(node, .top) }
     }
-    public final var borderRightWidth: Swift.Float {
+    public final var borderRightWidth: Float {
         set { YGNodeStyleSetBorder(node, .right, newValue) }
         get { return YGNodeStyleGetBorder(node, .right) }
     }
-    public final var borderBottomWidth: Swift.Float {
+    public final var borderBottomWidth: Float {
         set { YGNodeStyleSetBorder(node, .bottom, newValue) }
         get { return YGNodeStyleGetBorder(node, .bottom) }
     }
-    public final var borderStartWidth: Swift.Float {
+    public final var borderStartWidth: Float {
         set { YGNodeStyleSetBorder(node, .start, newValue) }
         get { return YGNodeStyleGetBorder(node, .start) }
     }
-    public final var borderEndWidth: Swift.Float {
+    public final var borderEndWidth: Float {
         set { YGNodeStyleSetBorder(node, .end, newValue) }
         get { return YGNodeStyleGetBorder(node, .end) }
     }
-    public final var borderWidth: Swift.Float {
+    public final var borderWidth: Float {
         set { YGNodeStyleSetBorder(node, .all, newValue) }
         get { return YGNodeStyleGetBorder(node, .all) }
     }

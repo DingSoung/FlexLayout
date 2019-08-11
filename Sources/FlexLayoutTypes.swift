@@ -13,9 +13,6 @@ extension FlexLayout {
     public typealias Wrap = YGWrap
     public typealias Overflow = YGOverflow
     public typealias Display = YGDisplay
-    struct Float {
-        var value: Swift.Float = 0
-    }
 }
 
 extension FlexLayout {

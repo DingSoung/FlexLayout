@@ -105,7 +105,7 @@ extension FlexLayout {
 }
 
 extension FlexLayout {
-    public final var aspectRatio: Swift.Float {
+    public final var aspectRatio: Float {
         set { YGNodeStyleSetAspectRatio(node, newValue) }
         get { return YGNodeStyleGetAspectRatio(node) }
     }

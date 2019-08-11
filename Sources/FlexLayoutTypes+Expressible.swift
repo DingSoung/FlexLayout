@@ -141,14 +141,3 @@ extension FlexLayout.Value: ExpressibleByStringLiteral {
         preconditionFailure("This value: \(value) is not invalid")
     }
 }
-
-extension FlexLayout.Float: ExpressibleByStringLiteral {
-    typealias StringLiteralType = String
-    init(stringLiteral value: String) {
-        if let float = Swift.Float(value) {
-            self = FlexLayout.Float(value: float)
-            return
-        }
-        preconditionFailure("This value: \(value) is not invalid")
-    }
-}
