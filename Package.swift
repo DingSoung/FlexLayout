@@ -11,12 +11,15 @@ let package = Package(
         .library(name: "FlexLayout", targets: ["FlexLayout"])
     ],
     dependencies: [
-        .package(url: "https://github.com/DingSoung/Extension", from: "0.8.9")
+        .package(url: "https://github.com/DingSoung/Extension", from: "0.9.2")
     ],
     targets: [
-        .target(name: "FlexLayout", path: "Sources", publicHeadersPath: "yoga")
+        .target(name: "FlexLayout", 
+            dependencies: ["Extension"],
+            path: "Sources", 
+            publicHeadersPath: "../Sources")
     ],
     swiftLanguageVersions: [
-        .version("5.0.0")
+        .version("5")
     ]
 )
