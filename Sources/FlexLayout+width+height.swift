@@ -3,6 +3,7 @@
 
 import Foundation
 import Extension
+import YogaKit
 
 extension FlexLayout {
     public final var width: Value {

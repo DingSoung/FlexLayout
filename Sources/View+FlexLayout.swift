@@ -1,8 +1,9 @@
 //  Created by Songwen Ding on 2019/8/11.
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
-import UIKit
 import Extension
+#if canImport(UIKit)
+import UIKit
 
 extension View {
     private static let association = Association<FlexLayout>()
@@ -24,3 +25,4 @@ extension View {
         }
     }
 }
+#endif

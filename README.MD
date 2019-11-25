@@ -17,12 +17,6 @@ Swift Package Manager
 https://github.com/DingSoung/FlexLayout master
 ```
 
-Carthage
-
-```swift
-github: DingSoung/FlexLayout master
-```
-
 # 使用
 
 ## 构造树

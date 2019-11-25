@@ -2,6 +2,7 @@
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
 import Foundation
+import YogaKit
 
 extension FlexLayout.Direction: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) {

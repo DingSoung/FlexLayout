@@ -1,9 +1,12 @@
 //  Created by Songwen Ding on 2019/4/16.
 //  Copyright © 2019 Songwen Ding. All rights reserved.
 
-import Foundation
-import UIKit
 import Extension
+import Foundation
+import YogaKit
+
+#if canImport(UIKit)
+import UIKit
 
 open class FlexLayout {
     private var isEnabled = true
@@ -147,3 +150,4 @@ extension FlexLayout {
                       height: YGNodeLayoutGetHeight(node))
     }
 }
+#endif

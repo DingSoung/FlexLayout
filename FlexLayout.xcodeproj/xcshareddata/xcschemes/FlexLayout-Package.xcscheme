@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1100"
+   LastUpgradeVersion = "9999"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEB5C02522FC4F030064EADF"
+               BlueprintIdentifier = "FlexLayout::FlexLayout"
                BuildableName = "FlexLayout.framework"
                BlueprintName = "FlexLayout"
                ReferencedContainer = "container:FlexLayout.xcodeproj">
@@ -47,15 +47,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEB5C02522FC4F030064EADF"
-            BuildableName = "FlexLayout.framework"
-            BlueprintName = "FlexLayout"
-            ReferencedContainer = "container:FlexLayout.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

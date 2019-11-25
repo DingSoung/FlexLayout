@@ -3,6 +3,7 @@
 
 import Foundation
 import CoreGraphics
+import YogaKit
 
 extension FlexLayout {
     public typealias Direction = YGDirection
