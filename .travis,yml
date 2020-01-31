@@ -1,7 +1,0 @@
-language: swift
-osx_image: xcode11
-before_install:
-script:
-  - xcodebuild clean -scheme FlexLayout | xcpretty
-
-  - xcodebuild -project FlexLayout.xcodeproj -scheme FlexLayout -destination 'name=Generic iOS Device' | xcpretty

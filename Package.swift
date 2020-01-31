@@ -11,17 +11,24 @@ let package = Package(
         .watchOS(.v2)
     ],
     products: [
-        .library(name: "FlexLayout", targets: ["FlexLayout"])
+        .library(
+            name: "FlexLayout",
+            targets: ["FlexLayout"]
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/DingSoung/Extension", .branch("master")),
         .package(url: "https://github.com/DingSoung/yoga", .branch("master"))
     ],
     targets: [
-        .target(name: "FlexLayout", 
-                dependencies: ["Extension", "YogaKit"],
-                path: "Sources"
-            )
+        .target(
+            name: "FlexLayout",
+            dependencies: [
+                "Extension",
+                "YogaKit"
+            ],
+            path: "Sources"
+        )
     ],
     swiftLanguageVersions: [
         .version("5")

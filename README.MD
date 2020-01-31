@@ -7,7 +7,7 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-9EA59D.svg)](https://paypal.me/DingSongwen)
 
-一个 iOS 的 Flexbox Layout 工具
+一个 Swift 版本的 Flexbox Layout 工具
 
 # 安装
 
