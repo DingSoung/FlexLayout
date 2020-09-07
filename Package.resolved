@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Extension",
+        "repositoryURL": "https://github.com/DingSoung/Extension",
+        "state": {
+          "branch": "master",
+          "revision": "912ef5b3e3cfcb8ff2824811d11cec455f4cd60b",
+          "version": null
+        }
+      },
+      {
+        "package": "YogaKit",
+        "repositoryURL": "https://github.com/DingSoung/yoga",
+        "state": {
+          "branch": "master",
+          "revision": "2e50059ad1b6049ec2df493e389c41438cec2b11",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

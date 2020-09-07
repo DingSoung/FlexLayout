@@ -32,5 +32,7 @@ let package = Package(
     ],
     swiftLanguageVersions: [
         .version("5")
-    ]
+    ],
+    cLanguageStandard: .gnu11,
+    cxxLanguageStandard: .gnucxx14
 )
