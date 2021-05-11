@@ -6,16 +6,16 @@
         "repositoryURL": "https://github.com/DingSoung/Extension",
         "state": {
           "branch": "master",
-          "revision": "912ef5b3e3cfcb8ff2824811d11cec455f4cd60b",
+          "revision": "c9a88b58b6c5b834b959baea36fd88cd1a907c25",
           "version": null
         }
       },
       {
         "package": "YogaKit",
-        "repositoryURL": "https://github.com/DingSoung/yoga",
+        "repositoryURL": "https://github.com/DingSoung/YogaKit",
         "state": {
           "branch": "master",
-          "revision": "2e50059ad1b6049ec2df493e389c41438cec2b11",
+          "revision": "02174f6385ad99835a1a3bbaaeeaf30f120e2fc6",
           "version": null
         }
       }

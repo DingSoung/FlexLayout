@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.4
 
 import PackageDescription
 
@@ -6,7 +6,7 @@ let package = Package(
     name: "FlexLayout",
     platforms: [
        	.macOS(.v10_10),
-        .iOS(.v8),
+        .iOS(.v9),
         .tvOS(.v9),
         .watchOS(.v2)
     ],
@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/DingSoung/Extension", .branch("master")),
-        .package(url: "https://github.com/DingSoung/yoga", .branch("master"))
+        .package(url: "https://github.com/DingSoung/YogaKit", .branch("master"))
     ],
     targets: [
         .target(
