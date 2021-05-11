@@ -61,7 +61,7 @@ extension FlexLayout {
     public final func set(sizeThatFits: @escaping (CGSize) -> CGSize) -> Self {
         if isLeaf {
             context = Context(sizeThatFits: sizeThatFits)
-            YGNodeSetContext(node, UnsafeMutableRawPointer(&context))
+            YGNodeSetContext(node, &context)
             YGNodeSetMeasureFunc(node, FlexLayout.measureFunc)
         } else {
             YGNodeSetMeasureFunc(node, nil)
